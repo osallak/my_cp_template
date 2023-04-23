@@ -157,6 +157,36 @@ class Graph{
 //modular arithmetic
 const int MOD = 1e9 + 7;
 
+//binary search iterative
+template<typename T>
+ll binary_search_iterative(vector<T> &v, T target){
+    ll l = 0, r = sz(v) - 1;
+    while(l <= r){
+        ll mid = (l + r) / 2;
+        if(v[mid] == target){
+            return mid;
+        }
+        else if(v[mid] < target){
+            l = mid + 1;
+        }
+        else{
+            r = mid - 1;
+        }
+    }
+    return -1;
+}
+
+//prefix sum
+template<typename T>
+vector<T> prefix_sum(vector<T> &v){
+    vector<T> prefix_sum(sz(v));
+    prefix_sum[0] = v[0];
+    for(int i = 1; i < sz(v); i++){
+        prefix_sum[i] = prefix_sum[i - 1] + v[i];
+    }
+    return prefix_sum;
+}
+
 
 //the main function
 void solve(void)
