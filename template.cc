@@ -106,7 +106,6 @@ class Graph{
     // implement some algorithms here
 
     //bfs for an unwieghted/undirected graph and returns true or false if the a target node is reachable or not
-    //prefix every attribute with this-> if you are using it in a class
     bool bfs(ll source, ll target){
         vector<bool> visited(n, false);
         queue<ll> q;
@@ -128,7 +127,7 @@ class Graph{
         return false;
     }
 
-    //dfs for an unwieghted/undirected graph and returns true or false if the a target node is reachable or not
+    //dfs
     bool dfs(ll source, ll target){
         vector<bool> visited(n, false);
         stack<ll> s;
